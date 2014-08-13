@@ -1,5 +1,5 @@
 <?php
-namespace app\webvimark\extensions\FormFieldsVisibility;
+namespace webvimark\extensions\FormFieldsVisibility;
 
 
 use yii\base\InvalidConfigException;

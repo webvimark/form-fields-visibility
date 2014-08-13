@@ -1,0 +1,9 @@
+{
+	"name": "webvimark/form-fields-visibility",
+	"description": "Widget for yii2 allowing to hide/show chosen fields in ActiveForm",
+	"autoload": {
+		"psr-4": {
+			"webvimark\\extensions\\FormFieldsVisibility\\": ""
+		}
+	}
+}

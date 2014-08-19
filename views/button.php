@@ -8,12 +8,12 @@ use yii\bootstrap\Modal;
 
 ?>
 
-<span data-toggle="modal" data-target="#page-fields-visibility" class="pull-right btn btn-sm btn-default" style="margin-top: -5px">
+<span data-toggle="modal" data-target="#modal-fields-visibility" class="pull-right btn btn-sm btn-default" style="margin-top: -5px">
 	<i class="fa fa-eye-slash"></i> Показать / скрыть поля
 </span>
 
 <? Modal::begin([
-	'id'=>'page-fields-visibility',
+	'id'=>'modal-fields-visibility',
 	'size'=>Modal::SIZE_SMALL,
 	'header'=>'<b>Показывать поля:</b>'
 ]) ?>

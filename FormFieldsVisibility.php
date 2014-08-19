@@ -29,6 +29,13 @@ class FormFieldsVisibility extends Widget
 	public $attributes = [];
 
 	/**
+	 * If storage id is not set, then model class name will be used
+	 *
+	 * @var null|string
+	 */
+	public $storageId = null;
+
+	/**
 	 * @var string
 	 */
 	protected $_modelName;
@@ -46,6 +53,11 @@ class FormFieldsVisibility extends Widget
 		}
 
 		$this->_modelName = $this->model instanceof ActiveRecord ? Inflector::camel2id(StringHelper::basename(get_class($this->model))) : $this->model;
+
+		if ( !$this->storageId )
+		{
+			$this->storageId = $this->_modelName;
+		}
 	}
 
 	/**
@@ -68,7 +80,7 @@ class FormFieldsVisibility extends Widget
 	{
 		$js = <<<JS
 
-		var encodedFields = localStorage.getItem('__field_visibility_$this->_modelName');
+		var encodedFields = localStorage.getItem('__field_visibility_$this->storageId');
 
 		if ( encodedFields )
 		{
@@ -96,7 +108,7 @@ class FormFieldsVisibility extends Widget
 				}
 			});
 
-			localStorage.setItem('__field_visibility_$this->_modelName', JSON.stringify(fieldsToHide));
+			localStorage.setItem('__field_visibility_$this->storageId', JSON.stringify(fieldsToHide));
 
 			location.reload();
 		});

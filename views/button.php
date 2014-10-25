@@ -12,7 +12,7 @@ use yii\bootstrap\Modal;
 	<i class="fa fa-eye-slash"></i> Показать / скрыть поля
 </span>
 
-<? Modal::begin([
+<?php Modal::begin([
 	'id'=>'modal-fields-visibility',
 	'size'=>Modal::SIZE_SMALL,
 	'header'=>'<b>Показывать поля:</b>'
@@ -35,4 +35,4 @@ use yii\bootstrap\Modal;
 	<i class="fa fa-check"></i> Сохранить
 </span>
 
-<? Modal::end() ?>
+<?php Modal::end() ?>
